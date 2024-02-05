@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kitchenreceiptprint.controller.MainLayoutController">
+    <top>
+        <MenuBar>
+            <Menu text="%file">
+                <items>
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#handleExit" text="%quit" />
+                </items>
+            </Menu>
+            <Menu text="%edit">
+                <MenuItem onAction="#handlePause" text="%pause" />
+                <MenuItem onAction="#handleSettings" text="%parameters" />
+            </Menu>
+            <Menu text="%help">
+                <items>
+                   <MenuItem onAction="#handleAbout" text="%about" />
+                </items>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <StackPane>
+            <ProgressIndicator fx:id="loader" visible="false" />
+
+            <Label fx:id="emptyConfLabel" alignment="CENTER" contentDisplay="CENTER" text="%emptyconfig" visible="false" />
+
+            <Button fx:id="launchButton" onAction="#handleLaunchButtonAction" text="%startup" />
+            <Button fx:id="resumeButton" onAction="#handleResumeButtonAction" text="%resume" visible="false" />
+
+            <TextArea fx:id="textArea" editable="false" prefHeight="1000" visible="false" />
+        </StackPane>
+    </center>
+</BorderPane>
